@@ -1,0 +1,45 @@
+chosed game is (Memory game)
+
+=============================================
+
+making game board with sequares (mostly 12 sequare)
+use emojis in each sequare and Set pairs of emojis placed randomly.
+
+Hide all emojis ineach sequare.
+
+Set timer to a fixed duration (e.g., 60 seconds).
+
+Wait for player to click on "Begin" button:
+    the time start andthe clicking on squares is enabled
+
+When a square is clicked:
+Reveal the emoji inside. 
+If they match:
+   Keep both revealed and disable further clicks on them.
+    Else:
+    Hide both emojis after a short delay.
+
+    Repeat until all pairs are matched or timer reaches zero
+
+If all pairs are matched before time ends:
+    Display "You Win!" message.
+Else if timer ends before all pairs are matched:
+    Display "You Lose!" message
+
+providing a 'restart' button so the boardand time restart
+
+=============================================
+
+As a user, I want to press a Begin button so that the game and timer start together.
+
+As a user, I want to click on hidden squares so that I can reveal the emojis inside.
+
+As a user, I want matching emojis to stay visible and unclickable so that I can track my progress.
+
+As a user, I want to see a timer so that I know how much time I have left.
+
+As a user, I want to win if I match all pairs before the timer ends.
+
+As a user, I want to lose if the timer runs out before I finish.
+
+As a user, I want a Restart button so that I can replay the game .
