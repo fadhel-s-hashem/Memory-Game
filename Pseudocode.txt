@@ -1,16 +1,16 @@
-chosed game is (Memory game)
+chose game is (Memory game)
 
 =============================================
 
-making game board with sequares (mostly 12 sequare)
-use emojis in each sequare and Set pairs of emojis placed randomly.
+making game board with squares (mostly 12 square)
+use emojis in each square and Set pairs of emojis placed randomly.
 
-Hide all emojis ineach sequare.
+Hide all emojis in each square.
 
 Set timer to a fixed duration (e.g., 60 seconds).
 
 Wait for player to click on "Begin" button:
-    the time start andthe clicking on squares is enabled
+    the time start and the clicking on squares is enabled
 
 When a square is clicked:
 Reveal the emoji inside. 
@@ -26,7 +26,7 @@ If all pairs are matched before time ends:
 Else if timer ends before all pairs are matched:
     Display "You Lose!" message
 
-providing a 'restart' button so the boardand time restart
+providing a 'restart' button so the board and time restart
 
 =============================================
 
