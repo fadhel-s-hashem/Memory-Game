@@ -1,0 +1,5 @@
+const sqr = document.querySelectorAll('.sqr')
+const result = document.querySelector('#result')
+const board = document.querySelector('.board')
+const reset = document.querySelector('#reset')
+const startBT = document.querySelector('#start')
