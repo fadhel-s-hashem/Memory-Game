@@ -19,20 +19,23 @@ sqr.forEach(function(card,arry){
     card.textContent=randomImoji[arry];
 
      card.addEventListener('click', function() {
-if (card.textContent !== "" || userChoice.length === 2) {
-    return
- } else {
-    card.textContent = randomImoji[arry];
-  }
- 
-
-    if(userChoice.length === 2){
+if(userChoice.length === 2){
+    if (userChoice[0].textContent !== userChoice[1].textContent) {
         userChoice[0].textContent= ''
         userChoice[1].textContent= ''
         userChoice =[]
     }
-      userChoice.push(card)
+    }
 
+ if (card.textContent !== "" || userChoice.length === 2) {
+    return
+  } else {
+    card.textContent = randomImoji[arry];
+   }
+ 
+
+      
+      userChoice.push(card)
 
       if (userChoice.length === 2) {
         let firstCard = userChoice[0]
@@ -42,7 +45,9 @@ if (card.textContent !== "" || userChoice.length === 2) {
         firstCard.style.backgroundColor = 'lightgreen'
         secondCard.style.backgroundColor = 'lightgreen'
         userChoice = []
-      }} 
+      } 
+    }
+        
     
             
  })    
