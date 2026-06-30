@@ -21,7 +21,6 @@ let randomImoji = emojis.sort(function () {
 })
 
 sqr.forEach(function (card, arry) {
-
   card.textContent = randomImoji[arry]
 
   card.addEventListener('click', function () {
@@ -43,7 +42,7 @@ sqr.forEach(function (card, arry) {
         if (pairsFound === 6) {
           result.textContent = "You win"
           clearInterval(runTimer)
-          
+
 
         }
         console.log(pairsFound);
@@ -65,17 +64,17 @@ sqr.forEach(function (card, arry) {
 
 startBT.addEventListener('click', function () {
   gameStarte = true
-  time.textContent= timerOn
+  time.textContent = timerOn
   sqr.forEach(function (card) {
     card.textContent = ""
     result.textContent = "Find the matching pairs"
-    
+
   })
 
- runTimer = setInterval(function () {
-    if (result.textContent !== 'You win' && gameStarte=== true) {
+  runTimer = setInterval(function () {
+    if (result.textContent !== 'You win' && gameStarte === true) {
       time.textContent = timerOn = timerOn - 1
-      if(timerOn <= 0) {
+      if (timerOn <= 0) {
         result.textContent = "Game Over"
         gameStarte = false
       }
@@ -85,31 +84,23 @@ startBT.addEventListener('click', function () {
   }, 1000)
 })
 
-  // setTimeout(function () {
-    //   if (timerOn <= 0) {
-      // }, 30000)
-  //     time.textContent=""
-  //     clearInterval(runTimer)
-  //   } 
-
-
 
 
 resetBT.addEventListener('click', function () {
   clearInterval(runTimer)
-    let randomImoji = emojis.sort(function () {
-  return 0.5 - Math.random()
-})
+  randomImoji = emojis.sort(function () {
+    return 0.5 - Math.random()
+  })
 
 
-sqr.forEach(function (card, arry) {
-  card.textContent = randomImoji[arry]
- timerOn = 30;
- time.textContent=""
- gameStarte = false
- result.textContent="Look carefully! Press 'Start Play' begin"
- card.style.backgroundColor=""
-})
+  sqr.forEach(function (card, arry) {
+    card.textContent = randomImoji[arry]
+    timerOn = 30;
+    time.textContent = ""
+    gameStarte = false
+    result.textContent = "Look carefully! Press 'Start Play' begin"
+    card.style.backgroundColor = ""
+  })
 })
 
 

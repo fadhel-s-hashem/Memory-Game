@@ -7,7 +7,18 @@ body {
     justify-content: center;
     min-height: 100dvh;
     flex-wrap: wrap;
+    background-color: antiquewhite;
 
+}
+
+
+.head{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column;
+    width: 100%;
+    
 }
 
 .board{
@@ -18,6 +29,10 @@ body {
   width: 500px;
   gap: 5px;
   border: transparent 3px black;
+  border-radius: 6vw;
+  background-color: rgb(236, 232, 232);
+  box-shadow: 10px 10px 40px;
+  padding: 1.5vw;
 }
 
 .sqr {
@@ -30,6 +45,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+
+.sqr:hover{
+    border: 3px solid rgb(192, 161, 124);
+}
+
+.buttons{
+    margin: 2vw;
+    padding: 2dvh;
+    display: flex;
+    justify-content: center;
+    gap: 50dvh;
+    border: transparent ;
+    border-radius: 25px ;
+background-color: rgb(236, 232, 232);
+    box-shadow: 10px 10px 40px;
+}
+
+.re-st{
+    border-radius: 20px;
+    border: double rgb(206, 197, 197) ;
+    padding: 0.7vw;
+  background-color: rgb(236, 232, 232);
+  
+   
 }
 
 
