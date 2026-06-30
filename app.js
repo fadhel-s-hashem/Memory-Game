@@ -9,7 +9,6 @@ let userChoice = [];
 let gameStarte = false;
 
 let pairsFound = 0
-let timeRemain;
 let timerOn = 30;
 
 const emojis = ['🍎', '🍎', '🍌', '🍌', '🍇', '🍇', '🍒', '🍒', '🍉',
@@ -63,6 +62,7 @@ sqr.forEach(function (card, arry) {
 })
 
 startBT.addEventListener('click', function () {
+  gameStarte = true
   sqr.forEach(function (card) {
     card.textContent = ""
     result.textContent = "Find the matching pairs"
@@ -70,7 +70,7 @@ startBT.addEventListener('click', function () {
   })
 
   const runTimer = setInterval(function () {
-    if (result.textContent !== 'You win') {
+    if (result.textContent !== 'You win' && gameStarte === true) {
       time.textContent = timerOn = timerOn - 1
     } else {
       time.textContent = ""
@@ -100,8 +100,20 @@ startBT.addEventListener('click', function () {
 
 
 resetBT.addEventListener('click', function () {
-  sqr.forEach(function (card, arry) {
-    card.textContent = randomImoji[arry]
-  })
+    let randomImoji = emojis.sort(function () {
+  return 0.5 - Math.random()
 })
+
+
+sqr.forEach(function (card, arry) {
+  card.textContent = randomImoji[arry]
+
+ 
+ gameStarte = false
+ result.textContent="Look carefully! Press 'Start Play' begin"
+ card.style.backgroundColor=""
+})
+})
+
+
 
