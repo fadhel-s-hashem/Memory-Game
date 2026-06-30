@@ -10,72 +10,80 @@ let gameStarte = false;
 
 let pairsFound = 0
 let timeRemain;
-let timerOn= 30;
+let timerOn = 30;
 
-const emojis = ['🍎' ,'🍎','🍌','🍌','🍇', '🍇','🍒','🍒','🍉',
-    '🍉','🍍','🍍'];
+const emojis = ['🍎', '🍎', '🍌', '🍌', '🍇', '🍇', '🍒', '🍒', '🍉',
+  '🍉', '🍍', '🍍'];
 
-let randomImoji = emojis.sort(function() {
-return 0.5-Math.random() 
+let randomImoji = emojis.sort(function () {
+  return 0.5 - Math.random()
 })
 
-sqr.forEach(function(card,arry){     
+sqr.forEach(function (card, arry) {
 
-    card.textContent=randomImoji[arry]
+  card.textContent = randomImoji[arry]
 
-     card.addEventListener('click', function() {
+  card.addEventListener('click', function () {
     if (card.textContent !== "" || userChoice.length === 2) {
-     return
+      return
     } else {
-        card.textContent = randomImoji[arry]
+      card.textContent = randomImoji[arry]
     }
 
-      userChoice.push(card)
-      if (userChoice.length === 2) {
-        let firstCard = userChoice[0]
-        let secondCard = userChoice[1]
-    
-      if(firstCard.textContent===secondCard.textContent){
+    userChoice.push(card)
+    if (userChoice.length === 2) {
+      let firstCard = userChoice[0]
+      let secondCard = userChoice[1]
+
+      if (firstCard.textContent === secondCard.textContent) {
         firstCard.style.backgroundColor = 'lightgreen'
         secondCard.style.backgroundColor = 'lightgreen'
-pairsFound = pairsFound +1
-if (pairsFound === 6) {
-        result.textContent = "You win"
-        return time.textContent=""
-        
-       }
-console.log(pairsFound);
+        pairsFound = pairsFound + 1
+        if (pairsFound === 6) {
+          result.textContent = "You win"
+          clearInterval(runTimer)
+          
+
+        }
+        console.log(pairsFound);
         userChoice = []
-      } else{ if(firstCard.textContent !== secondCard.textContent){
-        setTimeout(function(){
-            firstCard.textContent='' 
-            secondCard.textContent=''
+      } else {
+        if (firstCard.textContent !== secondCard.textContent) {
+          setTimeout(function () {
+            firstCard.textContent = ''
+            secondCard.textContent = ''
             userChoice = []
-        },500)
-      }}
+          }, 500)
+        }
+      }
     }
-        
-             
- })    
+
+
+  })
 })
 
-startBT.addEventListener('click',function(){
-    sqr.forEach(function(card) {
+startBT.addEventListener('click', function () {
+  sqr.forEach(function (card) {
     card.textContent = ""
-    result.textContent="Find the matching pairs"
-    
-    })
+    result.textContent = "Find the matching pairs"
 
-    const runTimer = setInterval(function(){
-       time.textContent = timerOn = timerOn-1
-    },1000)
+  })
 
-setTimeout(function(){
-       if(timerOn <= 0){
-      result.textContent="Game Over"
+  const runTimer = setInterval(function () {
+    if (result.textContent !== 'You win') {
+      time.textContent = timerOn = timerOn - 1
+    } else {
+      time.textContent = ""
+    }
+  }, 1000)
+
+  setTimeout(function () {
+    if (timerOn <= 0) {
+      result.textContent = "Game Over"
+      time.textContent=""
       clearInterval(runTimer)
-       } 
-},30000)
+    } 
+  }, 30000)
 
   //  const calculate = setInterval(displayTime, 1000)
 
@@ -87,13 +95,13 @@ setTimeout(function(){
   //     result.textContent="Game over"
   //     }
   //   }
-        
+
 })
 
 
-resetBT.addEventListener('click',function(){
-  sqr.forEach(function(card,arry){     
-  card.textContent=randomImoji[arry]
+resetBT.addEventListener('click', function () {
+  sqr.forEach(function (card, arry) {
+    card.textContent = randomImoji[arry]
   })
 })
 
