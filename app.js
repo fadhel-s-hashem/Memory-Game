@@ -10,6 +10,8 @@ let gameStarte = false;
 
 let pairsFound = 0
 let timerOn = 30;
+let runTimer
+
 
 const emojis = ['🍎', '🍎', '🍌', '🍌', '🍇', '🍇', '🍒', '🍒', '🍉',
   '🍉', '🍍', '🍍'];
@@ -63,43 +65,38 @@ sqr.forEach(function (card, arry) {
 
 startBT.addEventListener('click', function () {
   gameStarte = true
+  time.textContent= timerOn
   sqr.forEach(function (card) {
     card.textContent = ""
     result.textContent = "Find the matching pairs"
-
+    
   })
 
-  const runTimer = setInterval(function () {
-    if (result.textContent !== 'You win' && gameStarte === true) {
+ runTimer = setInterval(function () {
+    if (result.textContent !== 'You win' && gameStarte=== true) {
       time.textContent = timerOn = timerOn - 1
+      if(timerOn <= 0) {
+        result.textContent = "Game Over"
+        gameStarte = false
+      }
     } else {
       time.textContent = ""
     }
   }, 1000)
-
-  setTimeout(function () {
-    if (timerOn <= 0) {
-      result.textContent = "Game Over"
-      time.textContent=""
-      clearInterval(runTimer)
-    } 
-  }, 30000)
-
-  //  const calculate = setInterval(displayTime, 1000)
-
-  //   function displayTime() {
-  //     time.textContent = timerOn = timerOn-1
-
-  //     if(timerOn <=0  ){
-  //     clearInterval(calculate)
-  //     result.textContent="Game over"
-  //     }
-  //   }
-
 })
+
+  // setTimeout(function () {
+    //   if (timerOn <= 0) {
+      // }, 30000)
+  //     time.textContent=""
+  //     clearInterval(runTimer)
+  //   } 
+
+
 
 
 resetBT.addEventListener('click', function () {
+  clearInterval(runTimer)
     let randomImoji = emojis.sort(function () {
   return 0.5 - Math.random()
 })
@@ -107,10 +104,8 @@ resetBT.addEventListener('click', function () {
 
 sqr.forEach(function (card, arry) {
   card.textContent = randomImoji[arry]
-
  timerOn = 30;
-
-
+ time.textContent=""
  gameStarte = false
  result.textContent="Look carefully! Press 'Start Play' begin"
  card.style.backgroundColor=""
