@@ -41,7 +41,8 @@ sqr.forEach(function(card,arry){
 pairsFound = pairsFound +1
 if (pairsFound === 6) {
         result.textContent = "You win"
-        clearInterval(calculate)
+        return time.textContent=""
+        
        }
 console.log(pairsFound);
         userChoice = []
@@ -65,32 +66,34 @@ startBT.addEventListener('click',function(){
     
     })
 
-//     const runTimer = setInterval(function(){
-//        time.textContent = timerOn = timerOn-1
-//     },1000)
+    const runTimer = setInterval(function(){
+       time.textContent = timerOn = timerOn-1
+    },1000)
 
-// setTimeout(function(){
-//        if(timerOn <= 0 && pairsFound !== 6){
-//       result.textContent="Game Over"
-//       clearInterval(runTimer)
-//        } 
-// },30000)
+setTimeout(function(){
+       if(timerOn <= 0){
+      result.textContent="Game Over"
+      clearInterval(runTimer)
+       } 
+},30000)
 
-   const calculate = setInterval(displayTime, 1000)
+  //  const calculate = setInterval(displayTime, 1000)
 
-    function displayTime() {
-      time.textContent = timerOn = timerOn-1
+  //   function displayTime() {
+  //     time.textContent = timerOn = timerOn-1
 
-      if(timerOn <=0 ){
-      clearInterval(calculate)
-      result.textContent="Game over"
-      }
-    }
-      
-
-      
-      
-   
+  //     if(timerOn <=0  ){
+  //     clearInterval(calculate)
+  //     result.textContent="Game over"
+  //     }
+  //   }
+        
 })
 
+
+resetBT.addEventListener('click',function(){
+  sqr.forEach(function(card,arry){     
+  card.textContent=randomImoji[arry]
+  })
+})
 
