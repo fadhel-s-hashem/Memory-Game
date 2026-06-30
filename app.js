@@ -3,10 +3,13 @@ const result = document.querySelector('#result')
 const board = document.querySelector('.board')
 const resetBT = document.querySelector('#reset')
 const startBT = document.querySelector('#start')
+const time = document.querySelector('#timer')
 
 let userChoice = [];
-
 let gameStarte = false;
+
+let timeRemain;
+let timerOn= 60;
 
 const emojis = ['🍎' ,'🍎','🍌','🍌','🍇', '🍇','🍒','🍒','🍉',
     '🍉','🍍','🍍'];
@@ -16,21 +19,17 @@ return 0.5-Math.random()
 })
 
 sqr.forEach(function(card,arry){     
-    card.textContent=randomImoji[arry];
+    card.textContent=randomImoji[arry]
 
      card.addEventListener('click', function() {
     if (card.textContent !== "" || userChoice.length === 2) {
      return
     } else {
-        card.textContent = randomImoji[arry];
+        card.textContent = randomImoji[arry]
     }
-
- 
- 
 
       
       userChoice.push(card)
-
       if (userChoice.length === 2) {
         let firstCard = userChoice[0]
         let secondCard = userChoice[1]
@@ -41,8 +40,8 @@ sqr.forEach(function(card,arry){
         userChoice = []
       } else{ if(firstCard.textContent !== secondCard.textContent){
         setTimeout(function(){
-            firstCard.textContent = ""
-            secondCard.textContent = ""
+            firstCard.textContent='' 
+            secondCard.textContent=''
             userChoice = []
         },500)
       }}
@@ -54,12 +53,19 @@ sqr.forEach(function(card,arry){
 })
 
 startBT.addEventListener('click',function(){
-    gameStarte= true
     sqr.forEach(function(card) {
     card.textContent = ""
+    result.textContent="Find the matching pairs"
+    
     })
-    result.textContent="Find the Matching pairs"
-})
 
+    const calculate = setInterval(displayTime, 1000)
+
+    function displayTime() {
+      time.textContent = timerOn = timerOn-1
+
+      
+    }
+})
 
 

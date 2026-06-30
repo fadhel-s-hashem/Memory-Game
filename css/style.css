@@ -32,6 +32,4 @@ body {
     justify-content: center;
 }
 
-.sqr.hide {
-    color: initial; /* Returns the emoji text to its normal visible color */
-}
+
