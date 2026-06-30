@@ -58,16 +58,21 @@ startBT.addEventListener('click',function(){
     result.textContent="Find the matching pairs"
     
     })
-    // let timerOn= 30;
+
     const runTimer = setInterval(function(){
        time.textContent = timerOn = timerOn-1
     },1000)
 
     setTimeout(function(){
+      if(timerOn <= 0 ){
+      result.textContent="Game Over"
       clearInterval(runTimer)
-    },30000)
 
-    
+      }},30000)
+
+      
+      
+   
 })
 
 
