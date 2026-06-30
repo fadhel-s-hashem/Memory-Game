@@ -108,7 +108,9 @@ resetBT.addEventListener('click', function () {
 sqr.forEach(function (card, arry) {
   card.textContent = randomImoji[arry]
 
- 
+ timerOn = 30;
+
+
  gameStarte = false
  result.textContent="Look carefully! Press 'Start Play' begin"
  card.style.backgroundColor=""
