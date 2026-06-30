@@ -9,7 +9,7 @@ let userChoice = [];
 let gameStarte = false;
 
 let timeRemain;
-let timerOn= 60;
+let timerOn= 30;
 
 const emojis = ['🍎' ,'🍎','🍌','🍌','🍇', '🍇','🍒','🍒','🍉',
     '🍉','🍍','🍍'];
@@ -64,7 +64,10 @@ startBT.addEventListener('click',function(){
     function displayTime() {
       time.textContent = timerOn = timerOn-1
 
-      
+      if(timerOn){
+      clearInterval(calculate)
+      result.textContent="Game over"
+      }
     }
 })
 
