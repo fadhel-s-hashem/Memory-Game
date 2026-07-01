@@ -8,6 +8,7 @@ body {
     min-height: 100dvh;
     flex-wrap: wrap;
     background-color: antiquewhite;
+    /* background-color: rgb(254, 114, 114); */
 
 }
 
@@ -22,11 +23,12 @@ body {
 }
 
 .bottom{
-   width: 100%; 
+   width: 50%; 
    text-align: center;
-   border: transparent ;
+   border: solid 0px ;
     border-radius: 25px ;
-background-color: rgb(236, 232, 232);
+    background-color: rgb(248, 240, 240);
+    font-size: small;
 
 }
 
@@ -39,7 +41,7 @@ background-color: rgb(236, 232, 232);
   gap: 5px;
   border: transparent 3px black;
   border-radius: 6vw;
-  background-color: rgb(236, 232, 232);
+  background-color: rgb(225, 221, 221);
   box-shadow: 10px 10px 40px;
   padding: 1.5vw;
 }
@@ -54,6 +56,7 @@ background-color: rgb(236, 232, 232);
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgb(248, 240, 240);
     
 }
 
@@ -77,15 +80,15 @@ background-color: rgb(236, 232, 232);
     gap: 50dvh;
     border: transparent ;
     border-radius: 25px ;
-    background-color: rgb(236, 232, 232);
+    background-color: rgb(225, 221, 221);
     box-shadow: 10px 10px 40px;
 }
 
 .re-st{
     border-radius: 20px;
-    border:solid 3px rgb(236, 232, 232) ;
+    border:solid 3px rgb(225, 221, 221);
     padding: 0.7vw;
-    background-color: rgb(236, 232, 232);
+    background-color: rgb(225, 221, 221);
     
 }
 

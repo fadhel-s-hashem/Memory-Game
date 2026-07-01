@@ -4,6 +4,7 @@ const board = document.querySelector('.board')
 const resetBT = document.querySelector('#reset')
 const startBT = document.querySelector('#start')
 const time = document.querySelector('#timer')
+const bottom = document.querySelector('.bottom')
 
 let userChoice = [];
 let gameStarte = false;
@@ -41,6 +42,7 @@ sqr.forEach(function (card, arry) {
         pairsFound = pairsFound + 1
         if (pairsFound === 6 ) {
           result.textContent = "You win"
+          bottom.style.backgroundColor = 'lightgreen'
           clearInterval(runTimer)
 
 
@@ -65,7 +67,7 @@ sqr.forEach(function (card, arry) {
 startBT.addEventListener('click', function () {
   if (gameStarte === true) return
   gameStarte = true
-  time.textContent = timerOn
+  time.textContent = `Time Remain ${timerOn}`
 
   sqr.forEach(function (card) {
     card.textContent = ""
@@ -75,13 +77,20 @@ startBT.addEventListener('click', function () {
 
   runTimer = setInterval(function () {
     if (result.textContent !== 'You win' && gameStarte === true) {
-      time.textContent = timerOn = timerOn - 1
+      timerOn= timerOn-1
+      time.textContent = `Time Remain ${timerOn}`
+      
       if (timerOn <= 0) {
         result.textContent = "Game Over"
         gameStarte = false
+        bottom.style.backgroundColor = 'rgb(254, 114, 114)'
+      sqr.forEach(function(card) {
+        card.style.backgroundColor = 'rgb(254, 114, 114)'
+      })
+         
       }
     } else {
-      time.textContent = ""
+      time.textContent = `Time Remain ${timerOn}`
     }
   }, 1000)
 })
@@ -98,7 +107,8 @@ resetBT.addEventListener('click', function () {
   sqr.forEach(function (card, arry) {
     card.textContent = randomImoji[arry]
     timerOn = 30;
-    time.textContent = ""
+    time.textContent = "Time Remain "
+    bottom.style.backgroundColor = 'rgb(248, 240, 240)'
     pairsFound = 0
     gameStarte = false
     result.textContent = "Look carefully! Press 'Start Play' begin"
