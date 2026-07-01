@@ -1,10 +1,10 @@
 # Memory Game 🍎 🍇 🍍
----
+
 A fun, fast-paced browser-based memory matching game. Players must flip hidden cards and find all 6 matching fruit pairs before the 30-second timer runs out.
 
 ![the game image](assets/Memory%20Game.png)
 
----
+
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ A fun, fast-paced browser-based memory matching game. Players must flip hidden c
 No installation required! To play, simply copy the repository to your device and open the `index.html` file in any web browser.
 
 ```bash
-git clone [https://fadhel-s-hashem.github.io/Memory-Game/](https://fadhel-s-hashem.github.io/Memory-Game/)
+git clone 
 cd Memory-Game
 open index.html
 ```
