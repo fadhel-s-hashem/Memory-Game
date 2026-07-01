@@ -39,7 +39,7 @@ sqr.forEach(function (card, arry) {
         firstCard.style.backgroundColor = 'lightgreen'
         secondCard.style.backgroundColor = 'lightgreen'
         pairsFound = pairsFound + 1
-        if (pairsFound === 6) {
+        if (pairsFound === 6 ) {
           result.textContent = "You win"
           clearInterval(runTimer)
 
@@ -63,8 +63,10 @@ sqr.forEach(function (card, arry) {
 })
 
 startBT.addEventListener('click', function () {
+  if (gameStarte === true) return
   gameStarte = true
   time.textContent = timerOn
+
   sqr.forEach(function (card) {
     card.textContent = ""
     result.textContent = "Find the matching pairs"
@@ -97,6 +99,7 @@ resetBT.addEventListener('click', function () {
     card.textContent = randomImoji[arry]
     timerOn = 30;
     time.textContent = ""
+    pairsFound = 0
     gameStarte = false
     result.textContent = "Look carefully! Press 'Start Play' begin"
     card.style.backgroundColor = ""
